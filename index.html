@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Taimaz Web3 Platform</title>
+
+<style>
+body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; padding:0; text-align:center; direction:rtl; }
+header { background:#3b3b98; color:white; padding:20px 0; }
+main { padding:30px; }
+button { padding:10px 20px; margin:10px; cursor:pointer; border:none; border-radius:5px; background:#6ab04c; color:white; }
+button:hover { background:#27ae60; }
+input, textarea { padding:10px; margin:5px; border-radius:5px; border:1px solid #ccc; width:80%; }
+a { display:inline-block; margin-top:15px; text-decoration:none; color:#3b3b98; font-weight:bold; }
+.section { display:none; }
+#messages { text-align:right; max-width:500px; margin:20px auto; background:#fff; padding:10px; border-radius:5px; height:200px; overflow-y:auto; border:1px solid #ccc; }
+.message { padding:5px; margin:5px 0; background:#dff9fb; border-radius:5px; }
+#featuresList { list-style:none; padding:0; max-width:500px; margin:0 auto; }
+#featuresList li { background:#f1f2f6; padding:8px; margin:5px 0; border-radius:5px; cursor:pointer; }
+#featuresList li.active { background:#55efc4; }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>پلتفرم وب۳ تایماز</h1>
+<h3>نسخه رسمی توسعه‌دهنده</h3>
+</header>
+
+<main>
+
+<!-- اتصال و ورود -->
+<div id="loginSection" class="section">
+<h2>اتصال کیف پول (Wallet Connect)</h2>
+<p id="status">کیف پول متصل نیست</p>
+<button id="connectWalletBtn">اتصال کیف پول</button>
+
+<h2>ورود با نام کاربری</h2>
+<input type="text" id="usernameInput" placeholder="نام کاربری" />
+<button id="loginBtn">ورود</button>
+</div>
+
+<!-- داشبورد -->
+<div id="dashboardSection" class="section">
+<h2>داشبورد کاربر</h2>
+<p id="walletDisplay">آدرس کیف پول: ---</p>
+<p id="userDisplay">نام کاربری: ---</p>
+
+<h3>امکانات لحظه‌ای</h3>
+<ul id="featuresList"></ul>
+
+<h3>پیام‌ها</h3>
+<div id="messages"></div>
+<textarea id="messageInput" placeholder="پیام..."></textarea><br />
+<button id="sendMessageBtn">ارسال پیام</button>
+
+<a id="upgradeLink">ارتقا حساب</a><br />
+<button id="logoutBtn">خروج</button>
+</div>
+
+<!-- ارتقا -->
+<div id="upgradeSection" class="section">
+<h2>ارتقا حساب</h2>
+<p>قابلیت‌های پیشرفته وب۳ و امکانات بلاکچین، آماده اتصال به قرارداد هوشمند.</p>
+<ul>
+<li>دسترسی گسترده</li>
+<li>توکن شخصی</li>
+<li>سرویس‌های امن زنجیره‌ای</li>
+</ul>
+<a id="backToDashboard">بازگشت</a>
+</div>
+
+<script>
+// مدیریت نمایش صفحات
+function showSection(id){
+    document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+    document.getElementById(id).style.display='block';
+}
+
+// بارگذاری اولیه
+window.onload = () => {
+    const wallet = localStorage.getItem('wallet');
+    const user = localStorage.getItem('user');
+    if(wallet && user){
+        document.getElementById('walletDisplay').innerText = wallet;
+        document.getElementById('userDisplay').innerText = user;
+        showSection('dashboardSection');
+        loadMessages();
+        loadFeatures();
+    } else {
+        showSection('loginSection');
+    }
+};
+
+// اتصال کیف پول
+document.getElementById('connectWalletBtn').onclick = async () => {
+    if(window.ethereum){
+        try {
+            const ac = await ethereum.request({ method:"eth_requestAccounts" });
+            localStorage.setItem("wallet", ac[0]);
+            document.getElementById("status").innerText = "متصل شد";
+        } catch(e){ alert("خطا در اتصال"); }
+    } else alert("MetaMask نصب نیست");
+};
+
+// ورود
+document.getElementById('loginBtn').onclick = () => {
+    const u = document.getElementById('usernameInput').value.trim();
+    if(!u) return alert("نام کاربری را وارد کنید");
+    localStorage.setItem("user", u);
+    document.getElementById("userDisplay").innerText = u;
+    showSection("dashboardSection");
+    loadMessages();
+    loadFeatures();
+};
+
+// خروج
+document.getElementById('logoutBtn').onclick = () => {
+    localStorage.clear();
+    showSection("loginSection");
+};
+
+// ارتقا
+document.getElementById('upgradeLink').onclick = () => showSection("upgradeSection");
+document.getElementById('backToDashboard').onclick = () => showSection("dashboardSection");
+
+// پیام‌ها
+function loadMessages(){
+    const messages = JSON.parse(localStorage.getItem("messages") || "[]");
+    const box = document.getElementById("messages");
+    box.innerHTML = "";
+    messages.forEach(m=>{
+        const d = document.createElement("div");
+        d.className="message";
+        d.innerText = `${m.user}: ${m.text}`;
+        box.appendChild(d);
+    });
+}
+
+document.getElementById('sendMessageBtn').onclick = () => {
+    const u = localStorage.getItem("user");
+    const text = document.getElementById("messageInput").value.trim();
+    if(!text) return;
+    const messages = JSON.parse(localStorage.getItem("messages") || "[]");
+    messages.push({ user:u, text });
+    localStorage.setItem("messages", JSON.stringify(messages));
+    loadMessages();
+    document.getElementById("messageInput").value="";
+};
+
+// امکانات
+function loadFeatures(){
+    const list = document.getElementById("featuresList");
+    list.innerHTML="";
+    const f = [
+        {name:"کیف پول لحظه‌ای", active:true},
+        {name:"پیام رسان", active:true},
+        {name:"توکن شخصی", active:false},
+        {name:"فضای ابری AR", active:false}
+    ];
+    f.forEach((x,i)=>{
+        const li = document.createElement("li");
+        li.innerText = x.name;
+        if(x.active) li.className="active";
+        li.onclick = ()=> li.classList.toggle("active");
+        list.appendChild(li);
+    });
+}
+</script>
+
+</body>
+</html>
