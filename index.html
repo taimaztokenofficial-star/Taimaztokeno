@@ -1,290 +1,232 @@
-<!DOCTYPE html>
-<html lang="fa">
+[۶:۴۴, ۱۴۰۴/۹/۱۲] ⁦+98 937 999 5058⁩: <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>Taimaz Secure DApp - ارتقا یافته</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Web3 Wallet -->
+<script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+
+<!-- استایل ساده و مدرن -->
+<style>
+body {background:#0d0d0d;color:#fff;font-family:sans-serif;padding:20px;}
+#loginBox, #dashboard {max-width:500px;margin:auto;display:none;}
+input, button {width:100%;padding:12px;margin:8px 0;border-radius:10px;border:none;font-size:16px;}
+button {background:#7b2cbf;color:white;cursor:pointer;}
+button:hover {opac…
+[۶:۴۵, ۱۴۰۴/۹/۱۲] ⁦+98 937 999 5058⁩: حالا بگو چطور در حساب گیت هاب آپدیت کنم و این کد جایگزین کنم ؟ 
+قدم به قدم ..
+بگو هر گزینه کجاست 
+فقط بگو کجا برم .
+[۷:۴۴, ۱۴۰۴/۹/۱۲] ⁦+98 937 999 5058⁩: DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taimaz Web3 Ultimate | Official</title>
+<title>Taimaz Full App - نسخه پایه</title>
+<style>
+body{background:#0d0d0d;color:#fff;font-family:sans-serif;padding:20px;}
+#login,#dashboard{max-width:500px;margin:auto;}
+input,button{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:none;font-size:16px;}
+button{background:#7b2cbf;color:white;cursor:pointer;}
+.card{background:#111;padding:20px;border-radius:12px;margin:10px 0;border:1px solid #333;}
+#msgBox{height:200px;overflow-y:auto;background:#000;border:1px solid #333;padding:10px;border-radius:10px;}
+#copyBtn{background:#f4d03f;color:#000;font-weight:bold;font-size:16px;cursor:pointer;}
+</style>
+</h…
+[۷:۵۰, ۱۴۰۴/۹/۱۲] ⁦+98 937 999 5058⁩: <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taimaz Full App - نسخه پایه با Supabase Auth</title>
+
+<!-- Supabase JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+body{background:#0d0d0d;color:#fff;font-family:sans-serif;padding:20px;}
+#login,#dashboard{max-width:500px;margin:auto;}
+input,button{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:none;font-size:16px;}
+button{background:#7b2cbf;color:white;cursor:pointer;}
+.card{background:#111;padding:20px;border-radius:12px;margin:10px 0;border:1px solid #333;}
+#msgBox{height:200px;overflow-y:auto;background:#000;border:1px solid #333;padding:10px;bo…
+[۸:۰۱, ۱۴۰۴/۹/۱۲] ⁦+98 937 999 5058⁩: <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>Taimaz Token - Secure DApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- MetaMask -->
+<script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider/dist/detect-provider.min.js"></script>
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background:#000;
-    margin:0;
-    padding:0;
-    text-align:center;
-    color:#f5d26b;
+    background:#0d0d0d;
+    color:#fff;
+    font-family: sans-serif;
+    padding:20px;
 }
-
-header {
+.container {
+    max-width:450px;
+    margin:auto;
+}
+.card {
     background:#111;
-    border-bottom:2px solid #d4af37;
-    padding:25px 0;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    border:1px solid #333;
 }
+input, button {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    borde…
+[۸:۱۲, ۱۴۰۴/۹/۱۲] ⁦+98 937 999 5058⁩: <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>Taimaz Token - Secure Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-h1 {
-    color:#f5d26b;
-    font-size:36px;
-    margin:0;
-}
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-h2 {
-    color:#d4af37;
-    margin-top:10px;
+<style>
+body {
+    background:#0d0d0d;
+    color:#fff;
+    font-family: sans-serif;
+    padding:20px;
 }
-
-button {
-    background:#d4af37;
-    color:#000;
-    padding:12px 25px;
-    border:none;
-    border-radius:6px;
-    margin:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-button:hover {
-    background:#f5e08e;
-}
-
-input, textarea {
+.box {
+    max-width:420px;
+    margin:auto;
+    padding:20px;
     background:#111;
-    color:#f5d26b;
-    width:80%;
-    padding:10px;
-    border:1px solid #d4af37;
-    border-radius:5px;
-    margin-top:5px;
+    border-radius:12px;
 }
-
-a {
-    color:#d4af37;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-.section { display:none; }
-
-#messages {
-    text-align:right;
-    max-width:600px;
-    margin:20px auto;
-    background:#111;
-    padding:15px;
-    border-radius:5px;
-    height:200px;
-    overflow-y:auto;
-    border:1px solid #d4af37;
-}
-.message {
-    background:#222;
-    padding:6px;
-    margin:5px 0;
-    border-right:3px solid #d4af37;
-    border-radius:4px;
-}
-
-#featuresList li {
-    list-style:none;
-    background:#111;
+input, button {
+    width:100%;
+    padding:12px;
     margin:8px 0;
-    padding:10px;
-    border-radius:5px;
-    border:1px solid #444;
-    cursor:pointer;
-    transition:0.3s;
+    border-radius:10px;
+    border:none;
+    font-size:16px;
 }
-#featuresList li.active {
-    border-color:#d4af37;
-    background:#1a1a1a;
-}
-#featuresList li:hover {
-    background:#222;
-}
+button { background:#7b2cbf; color:white; }
+.dashboard { display:none; }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>وب۳ تایماز – نسخه نهایی</h1>
-<h2>Black & Gold Premium Edition</h2>
-</header>
+<h2 style="text-align:center;">Taimaz Token Secure Access</h2>
 
-<main>
+<!-- LOGIN -->
+<div id="authBox" class="box">
 
-<!-- ورود -->
-<div id="loginSection" class="section">
-<h2>اتصال کیف پول</h2>
-<p id="status">کیف پول متصل نیست</p>
-<button id="connectWalletBtn">اتصال MetaMask</button>
+    <h3>ورود</h3>
 
-<h2>ورود / ثبت‌نام</h2>
-<input type="text" id="usernameInput" placeholder="نام کاربری">
-<button id="loginBtn">ورود</button>
+    <input id="email" type="email" placeholder="ایمیل">
+    <input id="password" type="password" placeholder="پسورد">
+
+    <button onclick="login()">ورود</button>
+
+    <hr style="margin:20px 0; border-color:#333;">
+
+    <h3>ثبت‌نام</h3>
+
+    <input id="regEmail" type="email" placeholder="ایمیل">
+    <input id="regPassword" type="password" placeholder="پسورد">
+    <button onclick="register()">ثبت‌نام</button>
+
+    <p style="text-align:center; margin-top:15px; cursor:pointer;color:#7bcfff;"
+       onclick="resetPassword()">فراموشی رمز؟</p>
 </div>
 
-<!-- داشبورد -->
-<div id="dashboardSection" class="section">
-<h2>داشبورد طلایی</h2>
-<p id="walletDisplay">آدرس کیف پول: ---</p>
-<p id="userDisplay">نام کاربری: ---</p>
+<!-- DASHBOARD -->
+<div id="dashboard" class="box dashboard">
+    <h3>داشبورد</h3>
+    <p id="userEmail"></p>
 
-<h3>افزونه‌ها / امکانات</h3>
-<ul id="featuresList"></ul>
-
-<h3>پیام‌ها</h3>
-<div id="messages"></div>
-
-<textarea id="messageInput" placeholder="پیام خود را بنویسید..."></textarea><br>
-<button id="sendMessageBtn">ارسال پیام</button>
-
-<br><br>
-<a href="#" id="upgradeLink">ارتقا حساب</a>
-<br><br>
-<button id="logoutBtn">خروج</button>
+    <button onclick="logout()" style="background:#e63946;">خروج</button>
 </div>
 
-<!-- ارتقا -->
-<div id="upgradeSection" class="section">
-<h2>ارتقا VIP</h2>
-<p>امکانات ویژه قابل اتصال به قرارداد هوشمند:</p>
-<ul style="text-align:right;max-width:500px;margin:auto;">
-<li>✔ دسترسی ویژه</li>
-<li>✔ امکانات وب۳ پیشرفته</li>
-<li>✔ پیام‌رسان حرفه‌ای</li>
-</ul>
-
-<br>
-<a href="#" id="backToDashboard">بازگشت</a>
-</div>
-
-<!-- Supabase و فرم ورود واقعی -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-// اتصال به Supabase
-const supabaseUrl = 'https://eljzzgirwuzztvwfmyvr.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsanpnemlyd3V6enR2d3FteXZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1OTczMDYsImV4cCI6MjA4MDE3MzMwNn0.ZLzX_vR9Y7DrtdbmdgWRJeMzAt6au9hdpNm3Q42NX3Y';
-const supabase = supabase.createClient(supabaseUrl, supabaseAnonKey);
+// ------------------ CONFIG ------------------
+const SUPABASE_URL = "https://eljzgzirwuzztvwqmyvr.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsanpnemlyd3V6enR2d3FteXZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1OTczMDYsImV4cCI6MjA4MDE3MzMwNn0.ZLzX_vR9Y7DrtdbmdgWRJeMzAt6au9hdpNm3Q42NX3Y";
 
-// مدیریت صفحات
-function showSection(id){
-    document.querySelectorAll('.section').forEach(s => s.style.display='none');
-    document.getElementById(id).style.display='block';
-}
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
-// بارگذاری اولیه
-window.onload = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    if(user){
-        document.getElementById('userDisplay').innerText = "نام کاربری: " + user.email;
-        showSection('dashboardSection');
-    } else {
-        showSection('loginSection');
-    }
-};
+// ------------------ REGISTER ------------------
+async function register() {
+    let email = document.getElementById("regEmail").value;
+    let password = document.getElementById("regPassword").value;
 
-// ورود / ثبت‌نام
-document.getElementById('loginBtn').onclick = async () => {
-    const username = document.getElementById('usernameInput').value.trim();
-    if(!username) return alert("نام کاربری وارد کنید");
+    if (!email || !password) return alert("ایمیل و پسورد را وارد کن");
 
-    const email = username + "@taimaz.local"; 
-    const password = "password";
-
-    // ثبت‌نام یا ورود
-    const { data, error } = await supabase.auth.signUp({ email, password });
-    if(error){
-        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-        if(signInError) return alert(signInError.message);
-    }
-
-    document.getElementById('userDisplay').innerText = "نام کاربری: " + username;
-    showSection('dashboardSection');
-};
-
-// خروج
-document.getElementById('logoutBtn').onclick = async () => {
-    await supabase.auth.signOut();
-    showSection('loginSection');
-};
-
-// اتصال کیف پول
-document.getElementById('connectWalletBtn').onclick = async () => {
-    if(window.ethereum){
-        try{
-            const accounts = await ethereum.request({ method:'eth_requestAccounts' });
-            const account = accounts[0];
-            localStorage.setItem('wallet', account);
-
-            document.getElementById('status').innerText = "کیف پول متصل شد!";
-            alert("اتصال موفقیت‌آمیز");
-        }
-        catch(e){ alert("خطا در اتصال به MetaMask"); }
-    } else {
-        alert("MetaMask نصب نیست!");
-    }
-};
-
-// پیام‌رسان
-function loadMessages(){
-    const list = JSON.parse(localStorage.getItem('messages') || '[]');
-    const box = document.getElementById('messages');
-    box.innerHTML='';
-
-    list.forEach(msg=>{
-        const div = document.createElement('div');
-        div.className='message';
-        div.innerText = msg.user + ": " + msg.text;
-        box.appendChild(div);
+    let { error } = await supabaseClient.auth.signUp({
+        email,
+        password
     });
 
-    box.scrollTop = box.scrollHeight;
+    if (error) return alert(error.message);
+
+    alert("ثبت‌نام انجام شد ✔️ — لینک تایید به ایمیل ارسال شد");
 }
 
-document.getElementById('sendMessageBtn').onclick = () => {
-    const user = localStorage.getItem('user');
-    const text = document.getElementById('messageInput').value.trim();
+// ------------------ LOGIN ------------------
+async function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-    if(!text) return;
-
-    const msgs = JSON.parse(localStorage.getItem('messages') || '[]');
-
-    msgs.push({ user, text });
-    localStorage.setItem('messages', JSON.stringify(msgs));
-
-    document.getElementById('messageInput').value='';
-    loadMessages();
-};
-
-// امکانات
-function loadFeatures(){
-    const list = document.getElementById('featuresList');
-    list.innerHTML='';
-
-    const features = [
-        {name:'نمایش کیف پول', active:true},
-        {name:'ارسال پیام', active:true},
-        {name:'اتصال وب۳', active:true},
-        {name:'حالت VIP', active:false}
-    ];
-
-    features.forEach((f,i)=>{
-        const li = document.createElement('li');
-        li.innerHTML = f.name;
-        if(f.active) li.classList.add('active');
-
-        li.onclick = () => {
-            li.classList.toggle('active');
-            features[i].active = !features[i].active;
-        };
-
-        list.appendChild(li):
+    let { data, error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
     });
+
+    if (error) return alert("ورود ناموفق ❌: " + error.message);
+
+    localStorage.setItem("userEmail", email);
+
+    document.getElementById("authBox").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+
+    document.getElementById("userEmail").innerText = "ایمیل: " + email;
 }
 
-// ارتقا
-document.getElementById('upgradeLink').onclick = () => showSection('upgradeSection');
-document.getElementById('backToDashboard').onclick = () => showSection('dashboardSection');
+// ------------------ RESET PASSWORD ------------------
+async function resetPassword() {
+    let email = prompt("ایمیل خود را وارد کنید:");
+
+    if (!email) return;
+
+    let { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+        redirectTo: "https://username.github.io/reset.html"
+    });
+
+    if (error) return alert(error.message);
+
+    alert("لینک بازیابی رمز ارسال شد ✔️");
+}
+
+// ------------------ LOGOUT ------------------
+async function logout() {
+    await supabaseClient.auth.signOut();
+    localStorage.clear();
+    location.reload();
+}
 </script>
 
 </body>
